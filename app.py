@@ -4,7 +4,7 @@ import os
 
 st.set_page_config(layout="wide")
 
-st.title("ArguGraph: Structural Reasoning Demonstration")
+st.title("ArguGraph: Visualizing the Structure of Student Argumentation")
 
 # -------------------------------------------------
 # Essay metadata
@@ -45,7 +45,7 @@ st.markdown(f"**Complexity Level:** {essay_info['complexity']}")
 
 model_option = st.radio(
     "Select Structure View",
-    ["Gold Structure", "Collapsed Model", "Expanded Model"],
+    ["Reference Structure", "Collapsed Model", "Expanded Model"],
     horizontal=True
 )
 
