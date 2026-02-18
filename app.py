@@ -84,13 +84,13 @@ with st.expander("View Essay Text"):
 image_path = None  # always define first
 
 if model_option == "Reference Structure":
-    image_path = f"trees/{essay_id}_gold.jpg"
+    image_path = f"trees/{essay_id}_gold.png"
 
 elif model_option == "Collapsed Model":
-    image_path = f"trees/{essay_id}_collapsed.jpg"
+    image_path = f"trees/{essay_id}_collapsed.png"
 
 elif model_option == "Expanded Model":
-    image_path = f"trees/{essay_id}_expanded.jpg"
+    image_path = f"trees/{essay_id}_expanded.png"
 
 # --------------------------------------------
 # Display Tree
