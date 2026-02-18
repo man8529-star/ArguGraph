@@ -98,6 +98,6 @@ elif model_option == "Expanded Model":
 
 if image_path and os.path.exists(image_path):
     image = Image.open(image_path)
-    st.image(image, width=1200)
+    st.image(image, use_container_width=True)
 else:
     st.warning("Tree image not found.")
