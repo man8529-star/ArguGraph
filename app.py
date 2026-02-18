@@ -77,11 +77,13 @@ def load_essay_text(essay_id):
 with st.expander("View Essay Text"):
     st.write(load_essay_text(essay_id))
 
-# -------------------------------------------------
+# --------------------------------------------
 # Image Selection Logic
-# -------------------------------------------------
+# --------------------------------------------
 
-if model_option == "Gold Structure":
+image_path = None  # always define first
+
+if model_option == "Reference Structure":
     image_path = f"trees/{essay_id}_gold.jpg"
 
 elif model_option == "Collapsed Model":
@@ -90,12 +92,12 @@ elif model_option == "Collapsed Model":
 elif model_option == "Expanded Model":
     image_path = f"trees/{essay_id}_expanded.jpg"
 
-# -------------------------------------------------
+# --------------------------------------------
 # Display Tree
-# -------------------------------------------------
+# --------------------------------------------
 
-if os.path.exists(image_path):
+if image_path and os.path.exists(image_path):
     image = Image.open(image_path)
     st.image(image, use_container_width=True)
 else:
-    st.warning(f"Tree image not found at {image_path}")
+    st.warning("Tree image not found.")
