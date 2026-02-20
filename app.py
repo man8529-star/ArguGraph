@@ -19,8 +19,8 @@ essay_data = {
     },
     "Essay 2 (High Complexity)": {
         "id": "essay_2",
-        "collapsed_acc": 0.24,
-        "expanded_acc": 0.60,
+        "collapsed_acc": 0.21,
+        "expanded_acc": 0.50,
         "complexity": "High Complexity"
     }
 }
