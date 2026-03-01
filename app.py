@@ -6,9 +6,7 @@ st.set_page_config(layout="wide")
 
 st.title("ArguGraph: Visualizing the Structure of Student Argumentation")
 
-# -------------------------------------------------
 # Essay metadata
-# -------------------------------------------------
 
 essay_data = {
     "Essay 1 (Low Complexity)": {
@@ -25,9 +23,7 @@ essay_data = {
     }
 }
 
-# -------------------------------------------------
 # Essay Selection
-# -------------------------------------------------
 
 essay_choice = st.selectbox(
     "Select Essay",
@@ -39,9 +35,7 @@ essay_id = essay_info["id"]
 
 st.markdown(f"**Complexity Level:** {essay_info['complexity']}")
 
-# -------------------------------------------------
 # Model View Selection
-# -------------------------------------------------
 
 model_option = st.radio(
     "Select Structure View",
@@ -49,9 +43,7 @@ model_option = st.radio(
     horizontal=True
 )
 
-# -------------------------------------------------
 # Accuracy Display
-# -------------------------------------------------
 
 st.markdown("### Ranking Accuracy")
 
@@ -63,9 +55,8 @@ with col1:
 with col2:
     st.metric("Expanded Model", essay_info["expanded_acc"])
 
-# -------------------------------------------------
+
 # Essay Text (Collapsible)
-# -------------------------------------------------
 
 def load_essay_text(essay_id):
     path = f"essays/{essay_id}.txt"
@@ -77,9 +68,8 @@ def load_essay_text(essay_id):
 with st.expander("View Essay Text"):
     st.write(load_essay_text(essay_id))
 
-# --------------------------------------------
+
 # Image Selection Logic
-# --------------------------------------------
 
 image_path = None  # always define first
 
@@ -92,9 +82,7 @@ elif model_option == "Collapsed Model":
 elif model_option == "Expanded Model":
     image_path = f"trees/{essay_id}_expanded.png"
 
-# --------------------------------------------
 # Display Tree
-# --------------------------------------------
 
 if image_path and os.path.exists(image_path):
     image = Image.open(image_path)
