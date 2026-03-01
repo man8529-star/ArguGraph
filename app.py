@@ -55,6 +55,10 @@ with col1:
 with col2:
     st.metric("Expanded Model", essay_info["expanded_acc"])
 
+st.caption(
+    "Ranking accuracy displayed here reflects per-essay performance. "
+    "Reported metrics in the project summary reflect aggregated test-set averages."
+)
 
 # Essay Text (Collapsible)
 
@@ -81,6 +85,11 @@ elif model_option == "Collapsed Model":
 
 elif model_option == "Expanded Model":
     image_path = f"trees/{essay_id}_expanded.png"
+
+st.caption(
+    "Green nodes indicate correctly predicted parent attachments. "
+    "Red nodes indicate incorrect parent predictions."
+)
 
 # Display Tree
 
