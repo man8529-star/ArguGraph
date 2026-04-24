@@ -95,6 +95,6 @@ st.caption(
 
 if image_path and os.path.exists(image_path):
     image = Image.open(image_path)
-    st.image(image, use_container_width=False, height=500)
+    st.image(image, width=800)
 else:
     st.warning("Tree image not found.")
